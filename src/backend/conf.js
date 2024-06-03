@@ -40,12 +40,55 @@ export class Service{
                 slug,{
                     title,
                     content,
+                    featuredImage,
+                    status
                 }
             )
         } catch (error) {
-            
+            console.log("Appwrite Service :: Update Post :: error",error);
         }
     }
+
+    async deletePost(slug){
+        try {
+           await this.databases.deleteDocument(
+            config.appwriteDatabaseId,
+            config.appwriteCollectionId,
+            slug
+           ) 
+           return true
+        } catch (error) {
+            console.log('appwrite service ::  DeletePost::error ',error);
+            return false;
+        }
+    }
+
+    async getPost(slug){
+        try {
+            return await this.databases.getDocument(
+                config.appwriteDatabaseId,
+                config.appwriteCollectionId,
+                slug
+            )
+        } catch (error) {
+            console.log("Appwrite Service :: getPost :: error",error);
+            return false;
+        }
+    }
+
+    async getPosts(queries =[Query.equal("status","active")]){
+        try {
+            return await this.databases.listDocuments(
+                config.appwriteDatabaseId,
+                config.appwriteCollectionId,
+                queries,
+            )
+        } catch (error) {
+            console.log("Appwrite Service :: getPosts:: error",error)
+        }
+    }
+
+    //file upload service
 }
 
 
