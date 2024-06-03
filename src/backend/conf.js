@@ -88,7 +88,41 @@ export class Service{
         }
     }
 
-    //file upload service
+    //file upload services
+    async uploadFile(file){
+        try {
+            return await this.bucket.createFile(
+                config.appwriteBucketId,
+                ID.unique(),
+                file
+            )
+        } catch (error) {
+            console.log("Appwrite service:: upload File:: error",error);
+            return false;
+        }
+    }
+
+    //delete file service
+    async deleteFile(fileId){
+        try {
+            await this.bucket.deleteFile(
+                config.appwriteBucketId,
+                fileId
+            )
+            return true;
+        } catch (error) {
+            console.log("Appwrite Delete File :: deleteFile :: error",error);
+            return false;
+        }
+    }
+
+    //get File Preview
+    getFilePreview(fileId){
+        return this.bucket.getFilePreview(
+            config.appwriteBucketId,
+            fileId
+        )
+    }
 }
 
 
