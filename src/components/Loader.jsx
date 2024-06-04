@@ -1,7 +1,10 @@
+
 import loading from '../assets/loading.gif'
+
+
 const Loader = () => (
   <div className='flex h-screen w-screen flex-col items-center justify-center gap-2'>
-    <image
+    <img
       src={loading}
       alt='loader'
       width={100}
