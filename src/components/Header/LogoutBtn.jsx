@@ -11,7 +11,7 @@ function LogoutBtn() {
         })
     }
   return (
-    <button class="py-2.5 px-6 rounded-lg text-sm font-medium text-white bg-teal-600">Logout</button>
+    <button className="py-2.5 px-6 rounded-lg text-sm font-medium text-white bg-teal-600">Logout</button>
   )
 }
 
