@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
 import {logout} from '../../store/authSlice';
 import authService from '../../backend/conf';
@@ -11,7 +10,8 @@ function LogoutBtn() {
         })
     }
   return (
-    <button className="py-2.5 px-6 rounded-lg text-sm font-medium text-white bg-teal-600">Logout</button>
+    <button className="py-2.5 px-6 rounded-lg text-sm font-medium text-white bg-teal-600"
+    onClick={logoutHandler}>Logout</button>
   )
 }
 
