@@ -29,7 +29,7 @@ function App() {
       <div>
         <Header />
         <main>
-         Todo: <Outlet/>
+         {/* Todo: <Outlet/> */}
         </main>
         <Footer/>
       </div>
