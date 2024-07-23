@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { useDispatch } from 'react-redux'
-import authService from '../src/backend/auth'
+import authService from './backend/auth'
 import {login, logout} from './store/authSlice';
 import {Header , Footer} from './components/index';
 import { Outlet } from 'react-router-dom';
@@ -29,7 +29,7 @@ function App() {
       <div>
         <Header />
         <main>
-         {/* Todo: <Outlet/> */}
+         {/* Todo: */} <Outlet/>
         </main>
         <Footer/>
       </div>
